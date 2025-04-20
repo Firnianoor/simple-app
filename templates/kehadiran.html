@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Persentase Kehadiran</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Kalkulator Persentase Kehadiran</h2>
+        <form method="POST">
+            <label>Jumlah hadir:</label>
+            <input type="number" name="hadir" required>
+
+            <label for="total">Jumlah pertemuan:</label>
+            <input type="number" name="total" required>
+
+            <button type="submit">Hitung</button>
+        </form>
+
+        {% if persentase is defined and persentase is not none %}
+            <h3>persentase kehadiran: {{ persentase }}%</h3>
+        {% endif %}
+        <p class="thank-you-message">Hasil perhitungan akan ditampilkan di bawah tombol.</p>
+    </div>
+</body>
+</html>
